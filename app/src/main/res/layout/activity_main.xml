@@ -7,7 +7,15 @@
     android:padding="16dp"
     tools:context="juanfu.goovision.MainActivity">
 
-
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/text_nombres"
+       android:textSize="20sp"
+       android:layout_alignParentTop="true"
+       android:text="NoText"
+       android:textColor="@android:color/white"
+       />
 
    <SurfaceView
        android:id="@+id/surface_view"
