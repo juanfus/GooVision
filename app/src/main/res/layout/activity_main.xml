@@ -15,6 +15,7 @@
        android:layout_alignParentTop="true"
        android:text="NoText"
        android:textColor="@android:color/white"
+
        />
 
    <SurfaceView

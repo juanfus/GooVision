@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     CameraSource cameraSource;
     final int RequestCameraPermissionID = 1001;
+    int swnom = 0;
+    TextView txtnombre;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        txtnombre=(TextView)findViewById(R.id.text_nombres);
         cameraView = (SurfaceView) findViewById(R.id.surface_view);
         textView = (TextView) findViewById(R.id.text_view);
         TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
@@ -112,6 +114,16 @@ public class MainActivity extends AppCompatActivity {
                                         stringBuilder.append(item.getValue());
                                         stringBuilder.append("\n");
                                         textView.setText(stringBuilder.toString());
+
+                                        if(swnom==1){
+                                            txtnombre.setText(items.valueAt(i).toString());
+                                            swnom=2;
+                                        }
+                                        if(swnom ==0){
+                                            swnom=1;
+
+                                        }
+
                                     }
                                 }
                             });
